@@ -6,10 +6,11 @@ import ProductPreviewItem from './ProductPreviewItem';
 import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { filterCategories, filterRef } from "../services/categoryReferences";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const TOKEN = process.env.API_KEY
 
-function Products({products, category='all'}) {
+function Products({products, category='All Products'}) {
   // const [productsCategoryState, setProductsCategoryState] = useState({
   //   category: category,
   //   products:null
@@ -55,14 +56,14 @@ function Products({products, category='all'}) {
     <div className={styles.productsPageContainer}>
       <div className={isMenuOpen ? styles.filterContainerActive : styles.filterContainer}>
       <ul className={styles.navLinks}>
-        {filterCategories.map((category, index) => (
-          <a key={uuidv4()} href={category.url} className="category-link">
+        {filterCategories.map((item) => (
+          <a key={uuidv4()} href={item.url} className="category-link">
           <li
             key={uuidv4()}
-            className={activeIndex === index ? styles.activeCategory : styles.category}
+            className={item.name === category ? styles.activeCategory : styles.category}
             // onClick={() => handleClick(index)} // Set the active index on click
           >
-              {category.name}
+              {item.name}
           </li>
           </a>
         ))}
