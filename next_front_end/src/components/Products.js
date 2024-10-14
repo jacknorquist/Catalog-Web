@@ -1,5 +1,5 @@
 import ProductCatalogApi from '../services/api';
-import styles from '../css/Products.module.css';
+import styles from '../styles/Products.module.css';
 import { useParams } from 'react-router-dom';
 import Filter from './Filter';
 import ProductPreviewItem from './ProductPreviewItem';
@@ -9,12 +9,11 @@ import { filterCategories, filterRef } from "../services/categoryReferences";
 
 const TOKEN = process.env.API_KEY
 
-function Products({products}) {
-  const category = useParams().category;
-  const [productsCategoryState, setProductsCategoryState] = useState({
-    category: category,
-    products:null
-  });
+function Products({products, category='all'}) {
+  // const [productsCategoryState, setProductsCategoryState] = useState({
+  //   category: category,
+  //   products:null
+  // });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {
     setIsMenuOpen(isMenuOpen => !isMenuOpen);
@@ -29,18 +28,18 @@ function Products({products}) {
   const activeIndex = filterRef[category]
 
 
-  useEffect(() => {
-    //fetch products
-    async function fetchProducts() {
-      const products = await ProductCatalogApi.getProducts(productsCategoryState.category)
-      setProductsCategoryState({
-          category:productsCategoryState.category,
-          products: products
-        }
-      )
-    }
-    fetchProducts();
-  }, [productsCategoryState.category]);
+  // useEffect(() => {
+  //   //fetch products
+  //   async function fetchProducts() {
+  //     const products = await ProductCatalogApi.getProducts(productsCategoryState.category)
+  //     setProductsCategoryState({
+  //         category:productsCategoryState.category,
+  //         products: products
+  //       }
+  //     )
+  //   }
+  //   fetchProducts();
+  // }, [productsCategoryState.category]);
 
   async function changeCategory(category){
     setProductsCategoryState({
@@ -70,9 +69,9 @@ function Products({products}) {
       </ul>
     </div>
       {/* <Filter changeCategory={changeCategory}/> */}
-      {productsCategoryState.products ?
+      {products ?
         <div className={styles.products}>
-          {productsCategoryState.products.map(p=>
+          {products.map(p=>
                                                 <ProductPreviewItem
                                                 key={uuidv4()}
                                                 product={p}/>)}
