@@ -1,0 +1,109 @@
+.imageCarousel{
+  height: auto;
+  top: 0;
+  position:sticky;
+}
+
+.mainImageContainer {
+  position: relative; /* Create a positioning context for the button */
+}
+
+.mainImage{
+  object-fit: cover;
+  height: 40rem;
+  width: 100%;
+}
+
+.thumbnailImage, .thumbnailImageActive {
+  transition: transform 0.5s ease;
+  flex: 0 0 15%;               /* Each image takes up 20% of the container width */
+  height: 0;                   /* Set height to 0 to use padding for square aspect ratio */
+  padding-top: 15%;            /* Use padding-top to maintain a square aspect ratio */
+  position: relative;
+  box-sizing: border-box;
+  margin-right: 1%;     /* Include padding and borders in width calculations */
+}
+
+.thumbnailImageActive{
+  transition: transform 0.5s ease;
+  border: 1px solid black;
+  flex: 0 0 22%;
+  padding-top: 22%;
+}
+.thumbnailImage img, .thumbnailImageActive img {
+  position: absolute;          /* Position the image absolutely */
+  top: 0;
+  left: 0;
+  width: 100%;                /* Image takes full width */
+  height: 100%;               /* Image takes full height */
+  object-fit: cover;          /* Ensure the image covers the entire area */
+}
+
+.thumbnailImage img{
+  position: absolute;          /* Position the image absolutely */
+  top: 0;
+  left: 0;
+  width: 100%;                /* Image takes full width */
+  height: 100%;               /* Image takes full height */
+  object-fit: cover;
+  opacity: 65%;         /* Ensure the image covers the entire area */
+}
+
+.thumbnailImages{
+  display: flex;
+  justify-content: space-between;
+  transition: transform 0.5s ease;
+  width: 100%;
+  overflow: hidden;
+  align-items: center;
+}
+
+.showAllBtn {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed for spacing */
+  right: 10px; /* Adjust as needed for spacing */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white; /* Text color */
+  padding: 5px 10px; /* Some padding for better click area */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: background-color 0.3s; /* Smooth background color change */
+}
+
+.showAllBtn:hover{
+  background-color: grey;
+  opacity:75%;
+}
+
+.showAllBtn p{
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.arrowContainer{
+  color: white;
+  padding: 2%;
+  border-radius: .5rem;
+  background-color: rgba(0, 0, 0, 0.466);
+}
+
+.arrowContainer:hover{
+  background-color: rgb(51, 51, 51);
+  opacity:75%;
+}
+
+
+
+@media (max-width:480px){
+  .thumbnailImages{
+    display: flex;
+    height: 20%;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .mainImage{
+    height: 30rem;
+  }
+}

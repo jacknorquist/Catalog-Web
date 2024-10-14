@@ -1,0 +1,237 @@
+
+
+
+.logoLink:visited{
+  color: black;
+}
+.logoLink{
+  color: black;
+}
+
+.productCategory{
+  color: black;
+
+}
+.productCategory:visited{
+  color: black;
+
+}
+
+
+.breadcrumbs{
+  display: flex;
+}
+
+
+.productContainer{
+  margin-top:15%;
+  height: 100%;
+  width: 75%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  grid-template-rows: auto;
+  margin: auto;
+}
+
+.productImages{
+  height: 100%;
+  grid-column: 1/6;
+  margin-top: 15%;
+}
+
+.productInfo{
+  margin-top: 15%;
+  margin-left: 8%;
+  grid-column: 6/11;
+  height: 100%;
+}
+
+.mainProductInfo{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.descriptionContainer{
+  padding-top: 1%;
+}
+
+.headerContainer{
+  border-bottom: 1px solid lightgray;
+}
+
+.logo{
+  width: 35%;
+}
+.typeContainer{
+  padding-top: 1%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+}
+
+.colorImage{
+  width: 75%;
+}
+
+.colorImageActive{
+  border: 2px solid black;
+  width: 75%;
+}
+
+.colorItem{
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  margin-right: 2%;
+}
+
+.sizesContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+  margin-top: 1%;
+}
+.sizeImage{
+  width: 75%;
+}
+
+
+
+.sizeItem{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid lightgrey;
+  margin-right: 2%;
+  padding: 3%;
+}
+
+.pdfContainer{
+  width: 25%;
+  text-decoration: none;
+  padding: 1%;
+  justify-content: space-between;
+  text-decoration: none;
+  box-sizing: border-box;
+  display: flex;
+  border: 1px solid lightgray;
+}
+
+.pdfContainer:hover{
+  background-color: grey;
+}
+.pdfContainer a{
+  text-decoration: none;
+}
+
+@media (max-width:1440px){
+  .productContainer{
+    width: 95%;
+  }
+  .typeContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+    margin-top: 1%;
+  }
+}
+
+@media (max-width:480px){
+  .productContainer{
+    display: block;
+    height: 100%;
+    width: 95%;
+
+  }
+  .productImages{
+    height: 100%;
+    width: 100%;
+    margin-top: 15%;
+  }
+
+  .productInfo{
+    margin-left: 0;
+    margin-top: 2%;
+    height: 100%;
+  }
+
+
+  .mainProductInfo{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  .logoContainer{
+    display: flex;
+    justify-content: end;
+  }
+  .logoLink{
+    width: 33%;
+  }
+  .logo{
+    width: 100%;
+  }
+
+  .colorsContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  }
+
+  .colorImage{
+    width: 100%;
+  }
+  .colorImageActive{
+    width: 100%;
+    border: 2px solid black;
+  }
+
+  .colorItem{
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    margin-right: 2%;
+  }
+
+  .sizesContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+  }
+  .sizeImage{
+    width: 100%;
+  }
+
+  .sizeItem{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    border: 1px solid lightgrey;
+    margin-right: 2%;
+  }
+
+  .pdfContainer{
+    width: 100%;
+    text-decoration: none;
+    padding: 1%;
+    justify-content: space-between;
+    text-decoration: none;
+    box-sizing: border-box;
+    display: flex;
+    border: 1px solid lightgray;
+  }
+
+  .pdfContainer:hover{
+    background-color: grey;
+  }
+  .pdfContainer a{
+    text-decoration: none;
+  }
+}

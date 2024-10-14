@@ -1,8 +1,8 @@
 
 import Link from 'next/link';
-import styles from '../css/ProductPreviewItem.module.css';
+import styles from '../styles/ProductPreviewItem.module.css';
 import { v4 as uuidv4 } from 'uuid';
-import { categoryLinks } from '../services/categoryReferences.js';
+import { categoryLinks } from '../services/categoryRefs.js';
 
 function ProductPreviewItem({product}) {
 
@@ -10,12 +10,12 @@ function ProductPreviewItem({product}) {
 
   return (
     <div className={styles.productPreviewItem}data-id={product.id}>
-        <Link className={styles.link} id={styles.productNameLink} to={`/product/${cleanedProductName}`} state={{id : product.id}}>
+        <Link className={styles.link} id={styles.productNameLink} href={`/product/${cleanedProductName}-${product.id}`} state={{id : product.id}}>
         <img src={product.images[0].image_url} className={styles.mainImage}/>
         </Link>
         <div className={styles.descriptionContainer}>
           <a href={`${categoryLinks[product.normalized_category_name]}`} className={styles.productCategory}><i>{product.normalized_category_name}</i></a>
-          <Link className={styles.link} id={styles.productNameLink} to={`/product/${cleanedProductName}`} state={{id : product.id}}>
+          <Link className={styles.link} id={styles.productNameLink} href={`/product/${cleanedProductName}-${product.id}`} state={{id : product.id}}>
             <b className={styles.productName}>{product.name}</b>
           </Link>
         </div>
