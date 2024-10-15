@@ -92,6 +92,24 @@
   opacity:75%;
 }
 
+@media (max-width:1440px){
+  .mainImage{
+    object-fit: cover;
+    height: 30rem;
+    width: 100%;
+
+}
+}
+
+@media (max-width:720px){
+  .mainImage{
+    object-fit: cover;
+    height: 20rem;
+    width: 100%;
+
+}
+}
+
 
 
 @media (max-width:480px){
