@@ -57,7 +57,7 @@ function Product({product}) {
 
       // Add the clicked image (dataUrl) as the first image
       return {
-        images: [{ image_url: dataUrl }, ...filteredImages],
+        images: [ ...filteredImages],
         colorActive: dataId
       };
     });
