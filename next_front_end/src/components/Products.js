@@ -1,5 +1,7 @@
 import ProductCatalogApi from '../services/api';
 import styles from '../styles/Products.module.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import Filter from './Filter';
 import ProductPreviewItem from './ProductPreviewItem';

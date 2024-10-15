@@ -74,6 +74,13 @@
   grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
 }
 
+.typeContainerSizes{
+  padding-top: 1%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+
+}
+
 .colorImage{
   width: 75%;
 }

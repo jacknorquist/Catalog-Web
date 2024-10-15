@@ -55,11 +55,16 @@ function Product({product}) {
         image => image.color_id == dataId
       );
 
-      // Add the clicked image (dataUrl) as the first image
+      if (product.manufacturer.name != 'Techo Bloc'){
       return {
-        images: [ ...filteredImages],
+        images: [{ image_url: dataUrl }, ...filteredImages],
         colorActive: dataId
       };
+    }
+    return {
+      images: [...filteredImages],
+      colorActive: dataId
+    };
     });
   }
 
@@ -138,10 +143,12 @@ console.log(product)
           </div>
           <div className={styles.details}>
             <h4 className={styles.headerContainer}>Sizes</h4>
-            <div className={styles.typeContainer}>
+            <div className={styles.typeContainerSizes}>
               {product.sizes.map(size =>
                 <div key={uuidv4()} className={styles.sizeItem}>
+                {product.manufacturer.name === 'County Materials' ? null :
                 <b key={uuidv4()}>{size.name}</b>
+}
                 {size.image_url? <img src={size.image_url} className={styles.sizeImage}/>: null}
                 {size.dimensions.map(d => <p key={uuidv4()}>{d}</p>)}
                 </div>
@@ -160,10 +167,13 @@ console.log(product)
           </div>
           <div className='specContainer'>
             <h4 className={styles.headerContainer}>Additional Information</h4>
+            {product.spec_sheet ?
             <a className={styles.pdfContainer} target='blank' href={`${product.spec_sheet}`}>
               <div className={styles.specSheetContainer}>Spec Sheet</div>
               <i className='bi bi-file-pdf'></i>
             </a>
+            : null
+            }
             </div>
           </div>
       </div>
