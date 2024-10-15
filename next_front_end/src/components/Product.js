@@ -161,7 +161,7 @@ console.log(product)
           <div className='specContainer'>
             <h4 className={styles.headerContainer}>Additional Information</h4>
             <a className={styles.pdfContainer} target='blank' href={`${product.spec_sheet}`}>
-              <div className='specSheetContainer'>Spec Sheet</div>
+              <div className={styles.specSheetContainer}>Spec Sheet</div>
               <i className='bi bi-file-pdf'></i>
             </a>
             </div>

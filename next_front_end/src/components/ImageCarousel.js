@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from '../styles/ImageCarousel.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ImageCarousel({ imagesProp, returnToAllImages }) {
     const [imagesState, setImageState] = useState({

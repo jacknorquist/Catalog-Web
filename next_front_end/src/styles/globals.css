@@ -5,7 +5,17 @@ h4, h1, b, p {
 h1{
   margin: 0;
 }
+a{
+  color: black;
+}
+a:visited{
+  color: black;
+}
 
 p{
   font-family: Arial, Helvetica, sans-serif;
+}
+
+i{
+  color: black;
 }

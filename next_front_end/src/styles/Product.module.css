@@ -22,6 +22,10 @@
   display: flex;
 }
 
+.specSheetContainer{
+  color: black;
+}
+
 
 .productContainer{
   margin-top:15%;

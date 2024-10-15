@@ -3,6 +3,12 @@
   display: block;
 }
 
+.productCategory{
+  margin: 0;
+  color: black;
+  display: block;
+}
+
 
 .productPreviewItem{
     border: 1px solid lightgray;
@@ -65,9 +71,9 @@
   font-size: 20px;
 }
 
-.productCategory{
+/* .productCategory{
   margin-left: 1rem;
-}
+} */
 
 @media (max-width:480px) {
   .productPreviewItem{
