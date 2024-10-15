@@ -143,17 +143,24 @@ console.log(product)
           </div>
           <div className={styles.details}>
             <h4 className={styles.headerContainer}>Sizes</h4>
-            <div className={styles.typeContainerSizes}>
+            {product.sizes.length>0 ?
+
+            <div className={product.sizes[0].image_url ? styles.typeContainerSizesWImage : styles.typeContainerSizes}>
+
               {product.sizes.map(size =>
-                <div key={uuidv4()} className={styles.sizeItem}>
+                <div key={uuidv4()} className={size.image_url ? styles.sizeItemWImage :styles.sizeItem }>
                 {product.manufacturer.name === 'County Materials' ? null :
                 <b key={uuidv4()}>{size.name}</b>
-}
-                {size.image_url? <img src={size.image_url} className={styles.sizeImage}/>: null}
+                }
+                {size.image_url? <img src={size.image_url} className={product.manufacturer.name === 'Techo Bloc' ? styles.sizeImageTecho : styles.sizeImage}/>: null}
+                <div className={size.image_url? styles.dimensionsWImage : styles.dimensions}>
                 {size.dimensions.map(d => <p key={uuidv4()}>{d}</p>)}
+                </div>
                 </div>
               )}
             </div>
+            :
+            null}
             <div className={styles.textureContainer}>
               <h4 className={styles.headerContainer}>Textures</h4>
               <div className={styles.typeContainer}>
