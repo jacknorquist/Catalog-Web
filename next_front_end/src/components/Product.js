@@ -16,6 +16,8 @@ function Product({product}) {
     images:product.images,
     colorActive:false
   })
+  const [isClient, setIsClient] = useState(false);
+
   const isMobile = useMediaQuery({ maxWidth: 480 });
 
   // const location = useLocation();
@@ -24,6 +26,10 @@ function Product({product}) {
 
   let accentColors =[]
   let nonAccentColors =[];
+
+  useEffect(() => {
+    setIsClient(true); // Indicate that we are now on the client side
+  }, []);
 
 
 
@@ -83,6 +89,8 @@ function Product({product}) {
 console.log(product)
 
   return (
+    <div>
+      {isClient &&
     <div>
       {product ?
         <div className={styles.productContainer}>
@@ -220,6 +228,8 @@ console.log(product)
 
 
 
+    </div>
+}
     </div>
 
   );
