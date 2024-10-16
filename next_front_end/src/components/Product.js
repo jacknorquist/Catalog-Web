@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { categoryLinks } from '../services/categoryRefs.js';
 import {logos , manufacturerUrls}from '../services/logourls.js';
 import { useMediaQuery } from 'react-responsive';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const TOKEN = process.env.API_KEY
@@ -186,10 +187,12 @@ console.log(product)
 
               {product.sizes.map(size =>
                 <div key={uuidv4()} className={size.image_url ? styles.sizeItemWImage :styles.sizeItem }>
+                <div id={styles.blable}>
                 {product.manufacturer.name === 'County Materials' ? null :
                 <b key={uuidv4()}>{size.name}</b>
                 }
                 {size.image_url? <img src={size.image_url} className={product.manufacturer.name === 'Techo Bloc' ? styles.sizeImageTecho : styles.sizeImage}/>: null}
+                </div>
                 <div className={size.image_url? styles.dimensionsWImage : styles.dimensions}>
                 {size.dimensions.map(d => <p key={uuidv4()}>{d}</p>)}
                 </div>

@@ -69,26 +69,35 @@
 }
 .typeContainer{
   padding-top: 1%;
+  padding-bottom: 1%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
 }
 
 .typeContainerSizesWImage{
   padding-top: 1%;
+  padding-bottom: 1%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
 
 }
 .typeContainerSizes{
+  padding-bottom: 1%;
   padding-top: 1%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
 
 }
 
+#blable{
+  display: flex;
+  flex-direction: column;
+}
+
 
 .colorImage{
   width: 75%;
+  border: 3px solid rgb(201, 201, 201);
 }
 
 .colorImageActive{
@@ -115,6 +124,9 @@
   width: 75%;
 }
 
+.dimensionsWImage{
+  text-align: left;
+}
 
 
 .sizeItem{
@@ -132,7 +144,7 @@
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   border: 1px solid lightgrey;
   margin-right: 2%;
   padding: 3%;
