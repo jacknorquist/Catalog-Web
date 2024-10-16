@@ -31,6 +31,7 @@
   padding-top: 22%;
 }
 .thumbnailImage img, .thumbnailImageActive img {
+  cursor: pointer;
   position: absolute;          /* Position the image absolutely */
   top: 0;
   left: 0;

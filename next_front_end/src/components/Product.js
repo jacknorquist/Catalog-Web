@@ -207,7 +207,7 @@ console.log(product)
                 {product.textures.map(texture=>
                   <div key={uuidv4()} className={styles.textureContainer}>
                     <p key={uuidv4()}>{texture.name}</p>
-                    <img key={uuidv4()} src={texture.image_url} />
+                    <img key={uuidv4()} className={styles.textureImg} src={texture.image_url} />
                   </div>)}
                 </div>
             </div>
