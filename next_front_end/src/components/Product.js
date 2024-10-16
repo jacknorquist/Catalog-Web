@@ -114,11 +114,6 @@ console.log(product)
               <div>
                 <h1>{product.name}</h1>
               </div>
-              <div className={styles.logoContainer}>
-                <a className={styles.logoLink} href={manufacturerUrls[product.manufacturer.name]} target='blank'>
-                  <img className={styles.logo}src={logos[product.manufacturer.name]} />
-                </a>
-              </div>
             </div>
                 <a href={`${categoryLinks[product.normalized_category_name]}`} className={styles.productCategory}><i>{product.normalized_category_name}</i></a>
           {isMobile
@@ -140,7 +135,12 @@ console.log(product)
           }
           {!isMobile ?
           <div className={styles.descriptionContainer}>
-            <h4 className={styles.headerContainer}>Description</h4>
+            <div className={styles.descriptionHeaderDesc}>
+            <h4 className={styles.headerContainerDesc}>Description</h4>
+                <a className={styles.logoLink} href={manufacturerUrls[product.manufacturer.name]} target='blank'>
+                  <img className={styles.logo}src={logos[product.manufacturer.name]} />
+                </a>
+            </div>
             <p>{product.description}</p>
           </div>
           :null}

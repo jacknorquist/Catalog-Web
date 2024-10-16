@@ -1,12 +1,12 @@
 
 
-
+/*
 .logoLink:visited{
   color: black;
 }
 .logoLink{
   color: black;
-}
+} */
 
 .productCategory{
   color: black;
@@ -64,8 +64,9 @@
   border-bottom: 1px solid lightgray;
 }
 
+
 .logo{
-  width: 35%;
+  width: 100%;
 }
 .typeContainer{
   padding-top: 1%;
@@ -126,6 +127,19 @@
 
 .dimensionsWImage{
   text-align: left;
+}
+
+.descriptionHeader{
+  display: flex;
+  justify-content: space-between;
+}
+.descriptionHeaderDesc{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+}
+.logoLink{
+  width: 15%;
 }
 
 
@@ -218,6 +232,8 @@
   }
   .logoLink{
     width: 33%;
+    display: flex;
+    justify-content: end;
   }
   .logo{
     width: 100%;
