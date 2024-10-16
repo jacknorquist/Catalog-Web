@@ -6,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
 import { categoryLinks } from '../services/categoryRefs.js';
 import {logos , manufacturerUrls}from '../services/logourls.js';
+import { useMediaQuery } from 'react-responsive';
 
 
 const TOKEN = process.env.API_KEY
@@ -15,6 +16,7 @@ function Product({product}) {
     images:product.images,
     colorActive:false
   })
+  const isMobile = useMediaQuery({ maxWidth: 480 });
 
   // const location = useLocation();
 
@@ -84,6 +86,7 @@ console.log(product)
     <div>
       {product ?
         <div className={styles.productContainer}>
+          {!isMobile ?
           <div className={styles.productImages}>
             <div className={styles.breadcrumbs}>
             <Link className={styles.breadcrumbsLink}  href={`/products/`}>
@@ -96,6 +99,7 @@ console.log(product)
             </div>
             <ImageCarousel imagesProp={imagesState} returnToAllImages={returnToAllImages}/>
           </div>
+          :null}
           <div className={styles.productInfo}>
             <div className={styles.mainProductInfo}>
               <div>
@@ -108,10 +112,29 @@ console.log(product)
               </div>
             </div>
                 <a href={`${categoryLinks[product.normalized_category_name]}`} className={styles.productCategory}><i>{product.normalized_category_name}</i></a>
+          {isMobile
+          ?
+          <div className={styles.productImages}>
+            <div className={styles.breadcrumbs}>
+            <Link className={styles.breadcrumbsLink}  href={`/products/`}>
+              <i>Products</i>
+            </Link>
+            <i>/</i>
+            <Link className={styles.breadcrumbsLink}  href={`${categoryLinks[product.normalized_category_name]}`}>
+              <i>{product.normalized_category_name}</i>
+            </Link>
+            </div>
+            <ImageCarousel imagesProp={imagesState} returnToAllImages={returnToAllImages}/>
+          </div>
+          :
+          null
+          }
+          {!isMobile ?
           <div className={styles.descriptionContainer}>
             <h4 className={styles.headerContainer}>Description</h4>
             <p>{product.description}</p>
           </div>
+          :null}
           <div className={styles.details}>
               <h4 className={styles.headerContainer}>Colors</h4>
             <div className={styles.typeContainer}>
@@ -141,6 +164,12 @@ console.log(product)
                 </div>)}
               </div>
           </div>
+          {isMobile ?
+          <div className={styles.descriptionContainer}>
+            <h4 className={styles.headerContainer}>Description</h4>
+            <p>{product.description}</p>
+          </div>
+          : null}
           <div className={styles.details}>
             <h4 className={styles.headerContainer}>Sizes</h4>
             {product.sizes.length>0 ?
